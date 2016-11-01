@@ -13,6 +13,16 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
+        backToTop();
+
+        moveResult();
+
+    }
+
+    /**
+     * backボタンが押されたとき
+     */
+    protected void backToTop(){
         Button returnButton = (Button) findViewById(R.id.button_back);
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -21,6 +31,12 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    /**
+     * resultボタンが押されたとき
+     */
+    protected void moveResult(){
         final Button button = (Button) findViewById(R.id.button_result);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,4 +47,5 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
     }
+
 }
