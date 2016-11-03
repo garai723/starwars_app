@@ -3,6 +3,8 @@
     package="com.example.garai.starwars">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:allowBackup="true"
@@ -18,7 +20,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".SecondActivity" />
-        <activity android:name=".ResultActivity"></activity>
+        <activity android:name=".ResultActivity" />
+        <activity android:name=".NotifyActivity"/>
+        <receiver
+            android:name=".Notifier"
+            android:process=":remote" >
+        </receiver>
     </application>
 
 </manifest>

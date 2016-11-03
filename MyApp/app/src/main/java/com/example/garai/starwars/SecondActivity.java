@@ -67,7 +67,7 @@ public class SecondActivity extends AppCompatActivity {
                 Log.d("VALUE", hairColor);
 
                 AsyncGetJSONObject json = new AsyncGetJSONObject();
-                json.execute("http://swapi.co/api/people/1/");
+                json.execute("http://swapi.co/api/people/");
 
                 Intent intent = new Intent(getApplication(), ResultActivity.class);
                 startActivity(intent);

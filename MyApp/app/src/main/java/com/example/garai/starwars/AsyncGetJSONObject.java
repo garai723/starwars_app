@@ -100,6 +100,10 @@ public class AsyncGetJSONObject extends AsyncTask<String, Void, JSONObject> {
 
     @Override
     protected void onPostExecute(JSONObject result) {
-        Log.d("JSON", String.valueOf(result));
+        try {
+            Log.d("JSON", result.toString(4));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }
