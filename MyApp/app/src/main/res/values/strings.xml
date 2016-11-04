@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Starwars</string>
+
+
+    <string-array name="color_list">
+        <item>BLACK</item>
+        <item>BROWN</item>
+        <item>BLUE</item>
+        <item>RED</item>
+    </string-array>
+
 </resources>

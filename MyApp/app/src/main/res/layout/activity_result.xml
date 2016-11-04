@@ -12,22 +12,6 @@
 
     tools:context="com.example.garai.starwars.ResultActivity">
 
-    <TextView
-        android:text="Your Type is..."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="59dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="36dp"
-        android:id="@+id/result_text"
-        tools:text="Your Type is..."
-        android:textStyle="normal|bold"
-        android:textSize="36sp"
-        android:textColor="@android:color/background_light" />
-
     <Button
         android:text="TOP"
         android:layout_width="wrap_content"
@@ -39,4 +23,20 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="22dp"
         android:id="@+id/button_return" />
+
+    <TextView
+        android:text="Your Type is..."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="36dp"
+        android:id="@+id/result_text"
+        tools:text="Your Type is..."
+        android:textStyle="normal|bold"
+        android:textSize="36sp"
+        android:textColor="@android:color/background_light"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
