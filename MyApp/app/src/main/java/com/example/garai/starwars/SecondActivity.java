@@ -91,9 +91,9 @@ public class SecondActivity extends AppMenuActivity {
         // 初回実行時間設定（過去の時間設定の場合即実行）
         calendar.set(Calendar.YEAR, year);
         calendar.set(Calendar.MONTH, month);
-        calendar.set(Calendar.DATE, date + 1);
-        calendar.set(Calendar.HOUR_OF_DAY, 9);
-        calendar.set(Calendar.MINUTE, 00);
+        calendar.set(Calendar.DATE, date);
+        calendar.set(Calendar.HOUR_OF_DAY, 6);
+        calendar.set(Calendar.MINUTE, 35);
 
         //処理の実行感覚
         long interval = 60 * 60 * 12 * 1000;

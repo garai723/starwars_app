@@ -28,7 +28,9 @@
             android:name=".Notifier"
             android:process=":remote" />
 
-        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".FortuneActivity" />
+        <activity android:name=".TopActivity"></activity>
     </application>
 
 </manifest>

@@ -6,27 +6,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class ResultActivity extends AppMenuActivity {
+public class FortuneActivity extends AppMenuActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_result);
+        setContentView(R.layout.activity_fortune);
 
-        moveToFortune();
-
+        back();
     }
 
+    protected void back() {
 
-    /**
-     * 占うボタンがpされたとき
-     */
-    protected void moveToFortune() {
-        Button returnButton = (Button) findViewById(R.id.button_return);
-        returnButton.setOnClickListener(new View.OnClickListener() {
+        Button button = (Button) findViewById(R.id.button_fortune);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), FortuneActivity.class);
+                Intent intent = new Intent(getApplication(), TopActivity.class);
                 startActivity(intent);
 
                 finish();
