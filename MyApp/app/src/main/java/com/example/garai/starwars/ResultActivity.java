@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class ResultActivity extends AppCompatActivity {
+public class ResultActivity extends AppMenuActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

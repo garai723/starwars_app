@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-public class SecondActivity extends AppCompatActivity {
+public class SecondActivity extends AppMenuActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Starwars</string>
 
+    <string name="string_setting">Setteing</string>
 
     <string-array name="color_list">
         <item>BLACK</item>

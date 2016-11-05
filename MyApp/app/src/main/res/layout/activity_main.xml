@@ -14,6 +14,7 @@
     tools:context="com.example.garai.starwars.MainActivity"
     android:background="@android:color/background_dark">
 
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,5 +33,7 @@
         android:layout_marginBottom="51dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+
 
 </RelativeLayout>
