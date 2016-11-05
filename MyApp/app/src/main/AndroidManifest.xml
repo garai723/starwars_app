@@ -3,8 +3,8 @@
     package="com.example.garai.starwars">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -12,20 +12,23 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"/>
         <activity android:name=".SecondActivity" />
         <activity android:name=".ResultActivity" />
-        <activity android:name=".NotifyActivity"/>
+        <activity android:name=".NotifyActivity" />
+
         <receiver
             android:name=".Notifier"
-            android:process=":remote" >
-        </receiver>
+            android:process=":remote"></receiver>
+
+
     </application>
 
 </manifest>
