@@ -32,7 +32,16 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                EditText editTime = (EditText) findViewById(R.id.edit_time);
+                String time = editTime.getText().toString();
+
+
                 //TODO サーバーへ時刻設定送る
+
+                if(time.equals("")){
+                    Toast.makeText(getApplicationContext(), "未入力の項目があります", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 //確認用トースト
                 Toast.makeText(getApplicationContext(), "通知時刻を変更しました", Toast.LENGTH_SHORT).show();

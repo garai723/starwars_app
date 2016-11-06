@@ -13,6 +13,8 @@ public class ResultActivity extends AppMenuActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
+        //TODO サーバー通信&キャラ絵表示
+
         moveToFortune();
 
     }

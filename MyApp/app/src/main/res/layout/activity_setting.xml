@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:inputType="time"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/edit_time"
         android:layout_marginTop="47dp"
         android:accessibilityLiveRegion="none"
         android:background="@android:color/white"
@@ -37,7 +37,7 @@
         android:text="設定"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/edit_time"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="101dp"
         android:id="@+id/button_setting" />

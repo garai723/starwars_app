@@ -13,6 +13,8 @@ public class TopActivity extends AppMenuActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_top);
 
+        //TODO サーバー通信&キャラ絵表示
+
         moveToFortune();
 
     }

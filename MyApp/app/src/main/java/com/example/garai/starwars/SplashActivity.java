@@ -19,6 +19,9 @@ public class SplashActivity extends AppCompatActivity {
 
     class splashHandler implements Runnable {
         public void run() {
+
+            //TODO サーバー通信&遷移先振り分け（main or top）
+
             Intent intent = new Intent(getApplication(), MainActivity.class);
             startActivity(intent);
             SplashActivity.this.finish();

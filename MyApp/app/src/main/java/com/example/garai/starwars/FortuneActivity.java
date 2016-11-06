@@ -13,6 +13,8 @@ public class FortuneActivity extends AppMenuActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fortune);
 
+        //TODO サーバー通信&キャラ運勢表示
+
         back();
     }
 

@@ -19,11 +19,6 @@ public class MainActivity extends AppMenuActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String udid =
-                Settings.Secure.getString(this.getContentResolver(), Settings.System.ANDROID_ID);
-
-        Log.d("ID", udid);
-
         moveInputPage();
 
     }

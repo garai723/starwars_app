@@ -1,6 +1,8 @@
 package com.example.garai.starwars;
 
 import android.content.Intent;
+import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -12,6 +14,11 @@ import android.widget.Toast;
  */
 
 public class AppMenuActivity extends AppCompatActivity {
+
+    protected String getId() {
+        String id = Settings.Secure.getString(this.getContentResolver(), Settings.System.ANDROID_ID);
+        return id;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -31,6 +38,15 @@ public class AppMenuActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+//    protected void setId() {
+//        id = Settings.Secure.getString(this.getContentResolver(), Settings.System.ANDROID_ID);
+//    }
+//
+//    protected String getId(){
+//        return id;
+//    }
 }
+
 
 

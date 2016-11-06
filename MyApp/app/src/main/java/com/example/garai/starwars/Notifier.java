@@ -23,7 +23,7 @@ public class Notifier extends BroadcastReceiver {
 
         int bid = intent.getIntExtra("intentId", 0);
 
-        Intent intent2 = new Intent(context, MainActivity.class);
+        Intent intent2 = new Intent(context, TopActivity.class);
         PendingIntent pendingIntent =
                 PendingIntent.getActivity(context, bid, intent2, PendingIntent.FLAG_UPDATE_CURRENT);
 
