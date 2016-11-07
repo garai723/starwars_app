@@ -6,8 +6,27 @@
     <string-array name="color_list">
         <item>BLACK</item>
         <item>BROWN</item>
-        <item>BLUE</item>
-        <item>RED</item>
+        <item>NONE</item>
     </string-array>
 
+    <string-array name="blood_list">
+        <item>A</item>
+        <item>B</item>
+        <item>AB</item>
+        <item>O</item>
+    </string-array>
+
+    <string-array name="weapon_list">
+        <item>ライトセーバー</item>
+        <item>ブラスター</item>
+        <item>素手</item>
+        <item>フォース</item>
+    </string-array>
+
+    <string-array name="partner_list">
+        <item>スマホ</item>
+        <item>杉下右京</item>
+        <item>チューバッカ</item>
+        <item>R2-D2</item>
+    </string-array>
 </resources>

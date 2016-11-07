@@ -3,8 +3,10 @@ package com.example.garai.starwars;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class FortuneActivity extends AppMenuActivity {
 
@@ -15,7 +17,10 @@ public class FortuneActivity extends AppMenuActivity {
 
         //TODO サーバー通信&キャラ運勢表示
 
+        setFortuneResult();
+
         back();
+
     }
 
     protected void back() {
@@ -31,4 +36,15 @@ public class FortuneActivity extends AppMenuActivity {
             }
         });
     }
+
+    protected void setFortuneResult(){
+
+        TextView textView = (TextView)findViewById(R.id.text_fortune);
+
+        AsyncGetFortuneResult json = new AsyncGetFortuneResult(textView);
+        json.execute("http://27.120.120.174/StarWars/Fortune.php");
+
+
+    }
+
 }

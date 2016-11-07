@@ -30,7 +30,7 @@ public class SecondActivity extends AppMenuActivity {
         moveResult();
 
 
-        //TEST
+        //START TEST
 
         int max = 87;
         int min = 1;
@@ -52,6 +52,8 @@ public class SecondActivity extends AppMenuActivity {
             Log.d("MAX", Integer.toString(max));
             Log.d("MIN", Integer.toString(min));
             Log.d("RESULT" + i, Integer.toString(result));
+
+            //END TEST
 
         }
 
@@ -83,38 +85,37 @@ public class SecondActivity extends AppMenuActivity {
             @Override
             public void onClick(View v) {
 
-                EditText editWeight = (EditText) findViewById(R.id.edit_weight);
-                EditText editHeight = (EditText) findViewById(R.id.edit_height);
                 DatePicker datePicker = (DatePicker) findViewById(R.id.datePicker2);
-                Spinner spinner = (Spinner) findViewById(R.id.spinner_color);
+                Spinner spinnerColor = (Spinner) findViewById(R.id.spinner_color);
+                Spinner spinnerBlood = (Spinner) findViewById(R.id.spinner_blood);
+                Spinner spinnerWeapon = (Spinner) findViewById(R.id.spinner_weapon);
+                Spinner spinnerPartner = (Spinner) findViewById(R.id.spinner_partner);
 
-                String weight = editWeight.getText().toString();
-                String height = editHeight.getText().toString();
-                String hairColor = (String) spinner.getSelectedItem();
+                String hairColor = (String) spinnerColor.getSelectedItem();
+                String bloodType = (String) spinnerBlood.getSelectedItem();
+                String partner=(String)spinnerPartner.getSelectedItem();
+                String weapon=(String)spinnerWeapon.getSelectedItem();
+                int hairColorId=(int)spinnerColor.getSelectedItemId();
+                int bloodId=(int)spinnerBlood.getSelectedItemId();
+                int weaponId=(int)spinnerWeapon.getSelectedItemId();
+                int partnerId=(int)spinnerPartner.getSelectedItemId();
                 int birthYear = datePicker.getYear();
                 int birthMonth = datePicker.getMonth();
                 int birthDate = datePicker.getDayOfMonth();
 
-                Log.d("VALUE", weight);
-                Log.d("VALUE", height);
+                Log.d("VALUE",hairColorId+":"+hairColor);
+                Log.d("VALUE",bloodId+":"+bloodType );
+                Log.d("VALUE",weaponId+":"+weapon);
+                Log.d("VALUE",partnerId+":"+partner);
                 Log.d("BIRTH", Integer.toString(birthYear) + "年" + Integer.toString(birthMonth) + "月" + Integer.toString(birthDate) + "日");
-                Log.d("VALUE", hairColor);
-                Log.d("ID",getId());
-
-                if (weight.equals("") && height.equals("")) {
-                    Toast.makeText(getApplicationContext(), "体重を入力してください", Toast.LENGTH_SHORT).show();
-                    return;
-                } else if (height.equals("")) {
-                    Toast.makeText(getApplicationContext(), "身長を入力してください", Toast.LENGTH_SHORT).show();
-                    return;
-                } else if (weight.equals("")) {
-                    Toast.makeText(getApplicationContext(), "身長、体重を入力してください", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+                Log.d("ID", getId());
 
                 //http通信処理→resultでやる？
-                AsyncGetJSONObject json = new AsyncGetJSONObject();
-                json.execute("http://swapi.co/api/people/");
+//                AsyncGetJSONObject json = new AsyncGetJSONObject();
+//                json.execute("http://swapi.co/api/people/");  //SW API
+//
+//                AsyncGetJSONObject json2 = new AsyncGetJSONObject();
+//                json2.execute("http://27.120.120.174/StarWars/Fortune.php?birthday="+birthYear+"/"+birthMonth+"/"+birthDate);  //占い API
 
 
                 setNotification();

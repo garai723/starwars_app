@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class ResultActivity extends AppMenuActivity {
 
@@ -14,6 +16,8 @@ public class ResultActivity extends AppMenuActivity {
         setContentView(R.layout.activity_result);
 
         //TODO サーバー通信&キャラ絵表示
+
+        setCharInfo();
 
         moveToFortune();
 
@@ -35,4 +39,5 @@ public class ResultActivity extends AppMenuActivity {
             }
         });
     }
+
 }

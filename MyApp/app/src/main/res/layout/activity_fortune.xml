@@ -11,23 +11,47 @@
     tools:context="com.example.garai.starwars.FortuneActivity"
     android:background="@android:color/background_dark">
 
-    <TextView
-        android:text="今日の運勢は"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="61dp"
-        android:id="@+id/textFortune"
-        android:textColor="@android:color/background_light"
-        android:textSize="30sp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:text="TOP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="77dp"
-        android:id="@+id/button_fortune"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_vertical|center_horizontal|center">
+
+            <TextView
+                android:text="今日の運勢は"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textFortune"
+                android:textColor="@android:color/background_light"
+                android:textSize="30sp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:text="占い結果用"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="@android:color/background_light"
+                android:id="@+id/text_fortune"
+                android:textSize="30sp"
+                android:layout_marginBottom="20dp" />
+
+            <Button
+                android:text="TOP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="77dp"
+                android:id="@+id/button_fortune"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true" />
+        </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>

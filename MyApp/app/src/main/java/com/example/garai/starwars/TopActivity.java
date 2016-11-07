@@ -15,6 +15,8 @@ public class TopActivity extends AppMenuActivity {
 
         //TODO サーバー通信&キャラ絵表示
 
+        setCharInfo();
+
         moveToFortune();
 
     }

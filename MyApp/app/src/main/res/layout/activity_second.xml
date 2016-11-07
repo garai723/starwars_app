@@ -22,163 +22,132 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:orientation="vertical"
             android:weightSum="1">
 
             <TextView
-                android:id="@+id/text_title"
-                android:layout_width="match_parent"
+                android:id="@+id/text_height"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="血液型は？"
                 android:textColor="@android:color/background_light"
                 android:textSize="20sp"
                 android:textStyle="normal|bold"
-                tools:text="入力フォーム"
-                android:layout_marginStart="100dp"
-                android:layout_marginBottom="30dp"
-                android:background="@android:color/background_dark"
-                android:text="入力フォーム" />
+                tools:text="血液型は？" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <Spinner
+                android:id="@+id/spinner_blood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/editText2"
+                android:layout_alignStart="@+id/editText2"
+                android:layout_below="@+id/editText2"
                 android:layout_marginBottom="20dp"
-                android:layout_marginTop="30dp"
-                android:orientation="horizontal"
-                android:weightSum="1">
+                android:background="@android:color/background_light"
+                android:entries="@array/blood_list"
+                android:gravity="center_vertical|center|start"
+                android:layout_gravity="center_horizontal|center"
+                android:foregroundGravity="center_vertical|center" />
 
 
-                <TextView
-                    android:id="@+id/text_height"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="20sp"
-                    android:textStyle="normal|bold"
-                    tools:text="身長："
-                    android:text="身長：" />
-
-                <EditText
-                    android:id="@+id/edit_height"
-                    android:layout_width="180dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/editText"
-                    android:layout_alignStart="@+id/editText"
-                    android:layout_below="@+id/editText"
-                    android:background="@android:color/background_light"
-                    android:ems="10"
-                    android:inputType="number" />
-
-                <TextView
-                    android:id="@+id/text_cm"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="20sp"
-                    android:textStyle="normal|bold"
-                    tools:text="cm"
-                    android:text="cm" />
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <TextView
+                android:id="@+id/text_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:layout_marginTop="30dp"
-                android:orientation="horizontal"
-                android:weightSum="1">
+                android:text="敵に囲まれた！どの武器を選ぶ？"
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp"
+                android:textStyle="normal|bold"
+                tools:text="敵に囲まれた！どの武器を選ぶ？" />
 
-
-                <TextView
-                    android:id="@+id/text_weight"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="20sp"
-                    android:textStyle="normal|bold"
-                    tools:text="体重："
-                    android:text="体重：" />
-
-                <EditText
-                    android:id="@+id/edit_weight"
-                    android:layout_width="177dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/editText"
-                    android:layout_alignStart="@+id/editText"
-                    android:layout_below="@+id/editText"
-                    android:background="@android:color/background_light"
-                    android:ems="10"
-                    android:inputType="number" />
-
-                <TextView
-                    android:id="@+id/text_kg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="20sp"
-                    android:textStyle="normal|bold"
-                    tools:text="kg"
-                    android:text="kg" />
-
-            </LinearLayout>
-
-
-
-                <TextView
-                    android:id="@+id/text_birth"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="20sp"
-                    android:textStyle="normal|bold"
-                    android:text="生年月日："
-                    android:elevation="1dp" />
-
-                <DatePicker
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/datePicker2"
-                    android:background="@android:color/background_light"
-                    android:datePickerMode = "spinner"
-                    android:calendarViewShown = "false"
-                    android:spinnersShown = "true"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="50dp" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <Spinner
+                android:id="@+id/spinner_weapon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/editText2"
+                android:layout_alignStart="@+id/editText2"
+                android:layout_below="@+id/editText2"
                 android:layout_marginBottom="20dp"
-                android:layout_marginTop="30dp"
-                android:orientation="horizontal"
-                android:weightSum="1">
+                android:background="@android:color/background_light"
+                android:entries="@array/weapon_list"
+                android:gravity="center_vertical|center" />
 
 
-                <TextView
-                    android:id="@+id/text_color"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="20sp"
-                    android:textStyle="normal|bold"
-                    tools:text="髪色："
-                    android:text="髪色：" />
+            <TextView
+                android:id="@+id/text_partner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:elevation="1dp"
+                android:text="あなたの相棒は？"
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp"
+                android:textStyle="normal|bold" />
 
-                <Spinner
-                    android:id="@+id/spinner_color"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/editText2"
-                    android:layout_alignStart="@+id/editText2"
-                    android:layout_below="@+id/editText2"
-                    android:background="@android:color/background_light"
-                    android:entries="@array/color_list" />
+            <Spinner
+                android:id="@+id/spinner_partner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/editText2"
+                android:layout_alignStart="@+id/editText2"
+                android:layout_below="@+id/editText2"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/background_light"
+                android:entries="@array/partner_list"
+                android:gravity="center_vertical|center" />
 
-            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_hair"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:elevation="1dp"
+                android:text="あなたの髪色は？"
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp"
+                android:textStyle="normal|bold" />
+
+            <Spinner
+                android:id="@+id/spinner_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/editText2"
+                android:layout_alignStart="@+id/editText2"
+                android:layout_below="@+id/editText2"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/background_light"
+                android:entries="@array/color_list"
+                android:gravity="center_vertical|center" />
+
+
+            <TextView
+                android:id="@+id/text_birth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="生年月日はいつですか？"
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp"
+                android:textStyle="normal|bold"
+                tools:text="生年月日はいつですか？" />
+
+
+            <DatePicker
+                android:id="@+id/datePicker2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/background_light"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"
+                android:spinnersShown="true" />
+
 
             <Button
                 android:id="@+id/button_result"
@@ -187,8 +156,6 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="23dp"
-                android:layout_marginEnd="100dp"
-                android:layout_marginStart="100dp"
                 android:text="RESULT" />
 
             <Button
@@ -198,8 +165,6 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginEnd="100dp"
-                android:layout_marginStart="100dp"
                 android:layout_marginTop="10dp"
                 android:text="BACK" />
         </LinearLayout>

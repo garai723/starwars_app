@@ -1,5 +1,15 @@
 package com.example.garai.starwars;
 
+import android.os.AsyncTask;
+import android.provider.ContactsContract;
+import android.text.TextUtils;
+import android.util.Log;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -8,16 +18,18 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+public class AsyncGetSWAPIResult extends AsyncTask<String, Void, JSONObject> {
 
-import android.os.AsyncTask;
-import android.text.TextUtils;
-import android.util.Log;
+    private static final String TAG = AsyncGetSWAPIResult.class.getSimpleName();
+    private TextView textView;
+    private ImageView imageView;
 
-public class AsyncGetJSONObject extends AsyncTask<String, Void, JSONObject> {
-
-    private static final String TAG = AsyncGetJSONObject.class.getSimpleName();
+    //コンストラクタ
+    public AsyncGetSWAPIResult(TextView tv, ImageView iv) {
+        super();
+        textView = tv;
+        imageView = iv;
+    }
 
     @Override
     protected JSONObject doInBackground(String... params) {
@@ -102,8 +114,26 @@ public class AsyncGetJSONObject extends AsyncTask<String, Void, JSONObject> {
     protected void onPostExecute(JSONObject result) {
         try {
             Log.d("JSON", result.toString(4));
+
+            //TODO キー名変
+
+
+//            JSONObject character = result.getJSONObject("results");
+//            String charName = (String) character.get("name");
+
+
+            String charName = (String) result.get("name");
+
+
+            textView.setText(charName);
+            imageView.setImageResource(R.drawable.luke_skywalker);
+
+//            Log.d("SWAPI_NAME", String.valueOf(character));
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+
     }
 }
