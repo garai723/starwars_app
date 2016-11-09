@@ -19,13 +19,16 @@ package com.example.garai.starwars;
 
 public class AsyncGetFortuneResult extends AsyncTask<String, Void, JSONObject> {
 
-    private static final String TAG = AsyncGetFortuneResult.class.getSimpleName();
-    private TextView textView;
+    public interface AsyncTaskCallback {
+        void postExecute(JSONObject result);
+    }
+
+    private static final String TAG = AsyncGetSWAPIResult.class.getSimpleName();
+    private AsyncGetSWAPIResult.AsyncTaskCallback callback = null;
 
     //コンストラクタ
-    public AsyncGetFortuneResult(TextView tv){
-        super();
-        textView=tv;
+    public AsyncGetFortuneResult(AsyncGetSWAPIResult.AsyncTaskCallback _callback) {
+        this.callback = _callback;
     }
 
     @Override
@@ -109,17 +112,7 @@ public class AsyncGetFortuneResult extends AsyncTask<String, Void, JSONObject> {
 
     @Override
     protected void onPostExecute(JSONObject result) {
-        try {
-            Log.d("JSON", result.toString(4));
-
-            String fortune = (String) result.get("content");
-
-            textView.setText(fortune);
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-
+        super.onPostExecute(result);
+        callback.postExecute(result);
     }
 }

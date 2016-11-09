@@ -1,5 +1,8 @@
 package com.example.garai.starwars;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
@@ -20,16 +23,18 @@ import java.net.URL;
 
 public class AsyncGetSWAPIResult extends AsyncTask<String, Void, JSONObject> {
 
+    public interface AsyncTaskCallback {
+        void postExecute(JSONObject result);
+    }
+
     private static final String TAG = AsyncGetSWAPIResult.class.getSimpleName();
-    private TextView textView;
-    private ImageView imageView;
+    private AsyncTaskCallback callback = null;
 
     //コンストラクタ
-    public AsyncGetSWAPIResult(TextView tv, ImageView iv) {
-        super();
-        textView = tv;
-        imageView = iv;
+    public AsyncGetSWAPIResult(AsyncTaskCallback _callback) {
+        this.callback = _callback;
     }
+
 
     @Override
     protected JSONObject doInBackground(String... params) {
@@ -112,28 +117,8 @@ public class AsyncGetSWAPIResult extends AsyncTask<String, Void, JSONObject> {
 
     @Override
     protected void onPostExecute(JSONObject result) {
-        try {
-            Log.d("JSON", result.toString(4));
-
-            //TODO キー名変
-
-
-//            JSONObject character = result.getJSONObject("results");
-//            String charName = (String) character.get("name");
-
-
-            String charName = (String) result.get("name");
-
-
-            textView.setText(charName);
-            imageView.setImageResource(R.drawable.luke_skywalker);
-
-//            Log.d("SWAPI_NAME", String.valueOf(character));
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
+        super.onPostExecute(result);
+        callback.postExecute(result);
 
     }
 }

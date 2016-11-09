@@ -3,6 +3,7 @@ package com.example.garai.starwars;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,9 +16,25 @@ public class ResultActivity extends AppMenuActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
+        //値受け取り
+        Intent intent=getIntent();
+        int bloodId=intent.getIntExtra("BLOOD",0);
+        int weaponId=intent.getIntExtra("WEAPON",0);
+        int partnerId=intent.getIntExtra("PARTNER",0);
+        String birthday=intent.getStringExtra("BIRTHDAY");
+
+        //UUID取得
+        String uuid=getId();
+
+        Log.d("GET", String.valueOf(bloodId));
+        Log.d("GET", String.valueOf(weaponId));
+        Log.d("GET", String.valueOf(partnerId));
+        Log.d("GET",birthday);
+        Log.d("UUID",uuid);
+
         //TODO サーバー通信&キャラ絵表示
 
-        setCharInfo();
+        setCharInfo(bloodId,weaponId,partnerId,uuid,birthday);
 
         moveToFortune();
 

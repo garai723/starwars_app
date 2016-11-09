@@ -121,6 +121,10 @@ public class SecondActivity extends AppMenuActivity {
                 setNotification();
 
                 Intent intent = new Intent(getApplication(), ResultActivity.class);
+                intent.putExtra("BLOOD",bloodId+1);
+                intent.putExtra("WEAPON",weaponId+1);
+                intent.putExtra("PARTNER",partnerId+1);
+                intent.putExtra("BIRTHDAY",birthYear+"-"+birthMonth+"-"+birthDate);
                 startActivity(intent);
                 finish();
             }
