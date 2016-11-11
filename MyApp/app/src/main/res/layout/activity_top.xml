@@ -10,11 +10,13 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.garai.starwars.TopActivity"
-    android:background="@android:color/background_dark">
+    android:background="@drawable/space_bg">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,18 +24,9 @@
             android:orientation="vertical"
             android:gravity="center_vertical|center_horizontal|center">
 
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical|center_horizontal|center">
 
                 <TextView
-                        android:text="Hello  "
+                        android:text="Hello"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/text_hello"
@@ -52,26 +45,22 @@
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true" />
 
-                </LinearLayout>
-            </HorizontalScrollView>
-
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@mipmap/ic_launcher"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/image_character"
                 android:layout_marginBottom="20dp" />
 
             <Button
-                android:text="今日の運勢"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="128dp"
+                android:layout_height="112dp"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="122dp"
-                android:id="@+id/button_top" />
+                android:id="@+id/button_top"
+                android:background="@drawable/fortune" />
         </LinearLayout>
     </ScrollView>
 

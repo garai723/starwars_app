@@ -101,6 +101,8 @@ public class AsyncGetSWAPIResult extends AsyncTask<String, Void, JSONObject> {
 
         InputStream is = new BufferedInputStream(conn.getInputStream());
 
+        Log.d("AAAA", String.valueOf(is));
+
         int length = conn.getContentLength();
         ByteArrayOutputStream os = length > 0 ? new ByteArrayOutputStream(length) : new ByteArrayOutputStream();
 
@@ -112,7 +114,16 @@ public class AsyncGetSWAPIResult extends AsyncTask<String, Void, JSONObject> {
             }
         }
 
-        return new String(os.toByteArray(), charsetName);
+        String tmp= new String(os.toByteArray(), charsetName);
+
+        Log.d("AAAAA",tmp);
+
+//       if(tmp.equals(null)){
+//           tmp="{\"content\":\"隠していたことを、先輩に打ち明けるとスッキリ。今日は無理をしないで、趣味に時間をかけると充実の一日になります。\",\"item\":\"ハヤシライス\",\"money\":4,\"total\":3,\"job\":4,\"color\":\"イエロー\",\"day\":\"\",\"love\":3,\"rank\":6,\"sign\":\"獅子座\"}";
+//            return tmp;
+//       }
+
+        return tmp;
     }
 
     @Override

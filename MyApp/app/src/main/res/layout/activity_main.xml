@@ -12,13 +12,13 @@
 
 
     tools:context="com.example.garai.starwars.MainActivity"
-    android:background="@android:color/background_dark">
+    android:background="@drawable/space_bg">
 
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/logo_sw"
+        app:srcCompat="@drawable/title_logo"
         android:id="@+id/imageView"
         android:layout_above="@+id/imageButton"
         android:layout_alignParentLeft="true"

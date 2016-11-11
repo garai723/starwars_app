@@ -9,46 +9,12 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.garai.starwars.SettingActivity"
-    android:background="@android:color/darker_gray">
+    android:background="@color/basic_white1">
 
-    <TextView
-        android:text="通知時刻の設定"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/text_setting"
-        android:textSize="36sp"
+    <ListView android:id="@+id/listView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="102dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="time"
-        android:ems="10"
-        android:id="@+id/edit_time"
-        android:layout_marginTop="47dp"
-        android:accessibilityLiveRegion="none"
-        android:background="@android:color/white"
-        android:layout_below="@+id/text_setting"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:text="設定"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_time"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="101dp"
-        android:id="@+id/button_setting" />
-
-    <Button
-        android:text="戻る"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="25dp"
-        android:id="@+id/button_return" />
+        android:layout_alignParentStart="true">
+    </ListView>
 </RelativeLayout>

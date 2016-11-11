@@ -48,13 +48,12 @@ public class AppMenuActivity extends AppCompatActivity {
     }
 
 
-    protected void setCharInfo(int blood, int weapon, int partner, String uuid, String birthday) {
-
-
+    protected void setCharInfo(String... strings) {
 
         AsyncGetSWAPIResult swapi = new AsyncGetSWAPIResult(new AsyncGetSWAPIResult.AsyncTaskCallback() {
 
             public void postExecute(JSONObject result) {
+
                 try {
                     Log.d("JSON", String.valueOf(result));
 
@@ -70,7 +69,7 @@ public class AppMenuActivity extends AppCompatActivity {
                     Log.d("API", birthday);
 
                     //リソースID取得
-                    int res = getResources().getIdentifier("character_"+charId, "drawable", getPackageName());
+                    int res = getResources().getIdentifier("character_" + charId, "drawable", getPackageName());
 
                     Log.d("RES", String.valueOf(res));
 
@@ -90,7 +89,48 @@ public class AppMenuActivity extends AppCompatActivity {
         });
 
         //Index.phpに値送る
-        swapi.execute("http://27.120.120.174/StarWars/Index.php?os_type=Android&uuid=" + uuid + "&character_blood=" + blood + "+&character_weapon=" + weapon + "&user_birthday=" + birthday + "&character_partner=" + partner);
+        swapi.execute("http://27.120.120.174/StarWars/Index.php?os_type=Android&uuid=" + strings[0] + "&character_blood=" + strings[1] + "+&character_weapon=" + strings[2] + "&user_birthday=" + strings[3] + "&character_partner=" + strings[4]);
+
+    }
+
+
+    protected void checkUserInfo() {
+        AsyncGetSWAPIResult swapi = new AsyncGetSWAPIResult(new AsyncGetSWAPIResult.AsyncTaskCallback() {
+
+            public void postExecute(JSONObject result) {
+
+                try {
+
+
+                    String id = (String) result.get("uuid");
+
+                    Log.d("AAAAA", String.valueOf(id));
+
+
+                    if (id.equals("error")) {
+
+                        Intent intent = new Intent(getApplication(), SecondActivity.class);
+                        startActivity(intent);
+                    } else {
+
+                        Intent intent = new Intent(getApplication(), TopActivity.class);
+                        startActivity(intent);
+
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
+        String uuid = getId();
+
+        Log.d("ID", uuid);
+
+        //Index.phpに値送る
+        swapi.execute("http://27.120.120.174/StarWars/Index.php?uuid=" + getId());
 
     }
 

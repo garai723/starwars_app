@@ -10,7 +10,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class MainActivity extends AppMenuActivity {
 
@@ -32,9 +37,11 @@ public class MainActivity extends AppMenuActivity {
         final ImageButton button = (ImageButton) findViewById(R.id.imageButton);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), SecondActivity.class);
-                startActivity(intent);
+
+                checkUserInfo();
+
             }
         });
     }
+
 }

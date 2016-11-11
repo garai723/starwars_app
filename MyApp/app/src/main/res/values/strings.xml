@@ -3,6 +3,26 @@
 
     <string name="string_setting">Setteing</string>
 
+    <string name="A"><u>1.A型</u></string>
+    <string name="B">2.B型</string>
+    <string name="AB">3.AB型</string>
+    <string name="O">4.O型</string>
+
+    <string name="saver"><u>1.ライトセーバー</u></string>
+    <string name="bluster">2.ブラスター</string>
+    <string name="pieces">3.素手</string>
+    <string name="force">4.フォース</string>
+
+    <string name="phone"><u>1.スマホ</u></string>
+    <string name="ukyo">2.杉下右京</string>
+    <string name="chubakka">3.チューバッカ</string>
+    <string name="r2d2">4.R2-D2</string>
+
+    <string name="black"><u>1.黒髪</u></string>
+    <string name="brown">2.茶髪</string>
+    <string name="none">3.髪無し</string>
+    <string name="others">4.その他</string>
+
     <string-array name="color_list">
         <item>BLACK</item>
         <item>BROWN</item>
@@ -10,23 +30,23 @@
     </string-array>
 
     <string-array name="blood_list">
-        <item>A</item>
-        <item>B</item>
-        <item>AB</item>
-        <item>O</item>
+        <item><u>1.A型</u></item>
+        <item>2.B型</item>
+        <item>3.AB型</item>
+        <item>4.O型</item>
     </string-array>
 
     <string-array name="weapon_list">
-        <item>ライトセーバー</item>
-        <item>ブラスター</item>
-        <item>素手</item>
-        <item>フォース</item>
+        <item>1.ライトセーバー</item>
+        <item>2.ブラスター</item>
+        <item>3.素手</item>
+        <item>4.フォース</item>
     </string-array>
 
     <string-array name="partner_list">
-        <item>スマホ</item>
-        <item>杉下右京</item>
-        <item>チューバッカ</item>
-        <item>R2-D2</item>
+        <item>1.スマホ</item>
+        <item>2.杉下右京</item>
+        <item>3.チューバッカ</item>
+        <item>4.R2-D2</item>
     </string-array>
 </resources>

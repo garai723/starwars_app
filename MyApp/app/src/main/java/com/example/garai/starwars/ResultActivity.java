@@ -18,9 +18,9 @@ public class ResultActivity extends AppMenuActivity {
 
         //値受け取り
         Intent intent=getIntent();
-        int bloodId=intent.getIntExtra("BLOOD",0);
-        int weaponId=intent.getIntExtra("WEAPON",0);
-        int partnerId=intent.getIntExtra("PARTNER",0);
+        String bloodId=intent.getStringExtra("BLOOD");
+        String weaponId=intent.getStringExtra("WEAPON");
+        String partnerId=intent.getStringExtra("PARTNER");
         String birthday=intent.getStringExtra("BIRTHDAY");
 
         //UUID取得
@@ -34,7 +34,7 @@ public class ResultActivity extends AppMenuActivity {
 
         //TODO サーバー通信&キャラ絵表示
 
-        setCharInfo(bloodId,weaponId,partnerId,uuid,birthday);
+        setCharInfo(uuid,bloodId,weaponId,birthday,partnerId);
 
         moveToFortune();
 
