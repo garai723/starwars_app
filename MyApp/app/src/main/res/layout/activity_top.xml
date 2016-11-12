@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.garai.starwars.TopActivity"
-    android:background="@drawable/space_bg">
+    android:background="@drawable/background">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -36,11 +36,10 @@
                         android:layout_centerHorizontal="true" />
 
                     <TextView
-                        android:text="charName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/text_name"
-                        android:textSize="30sp"
+                        android:textSize="20sp"
                         android:textColor="@android:color/background_light"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true" />
@@ -52,6 +51,13 @@
                 android:layout_centerHorizontal="true"
                 android:id="@+id/image_character"
                 android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_profile"
+                android:layout_marginBottom="20dp"
+                android:background="@color/basic_blue2" />
 
             <Button
                 android:layout_width="128dp"

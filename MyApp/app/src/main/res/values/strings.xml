@@ -23,6 +23,16 @@
     <string name="none">3.髪無し</string>
     <string name="others">4.その他</string>
 
+
+    <string name="root">261c183004b3a8c7</string>
+
+
+    <string-array name="theme_list">
+        <item>デフォルト</item>
+        <item>ブラック</item>
+        <item>ピンク</item>
+    </string-array>
+
     <string-array name="color_list">
         <item>BLACK</item>
         <item>BROWN</item>
@@ -49,4 +59,6 @@
         <item>3.チューバッカ</item>
         <item>4.R2-D2</item>
     </string-array>
+
+
 </resources>

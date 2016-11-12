@@ -8,6 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="SplashTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowBackground">@color/basic_white1</item>
+    </style>
+
     <style name="MyDialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@drawable/rect</item>
         <item name="android:buttonStyle">@style/CustomButton</item>
@@ -19,4 +25,11 @@
         <item name="android:background">@drawable/button_stateful</item>
     </style>
 
+    <style name="MyRating" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/rating</item>
+        <item name="android:minHeight">38dip</item>
+        <item name="android:maxHeight">38dip</item>
+        <item name="android:thumb">@null</item>
+        <item name="android:isIndicator">true</item>
+    </style>
 </resources>

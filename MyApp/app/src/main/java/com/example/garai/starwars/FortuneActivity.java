@@ -1,13 +1,17 @@
 package com.example.garai.starwars;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.json.JSONException;
@@ -20,27 +24,32 @@ public class FortuneActivity extends AppMenuActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fortune);
 
-        //TODO サーバー通信&キャラ運勢表示
+        RelativeLayout layout = (RelativeLayout)findViewById(R.id.activity_fortune);
+
+        changeBackGround(layout);
 
         setFortuneResult();
 
-        back();
 
     }
 
-    protected void back() {
+    @TargetApi(Build.VERSION_CODES.N)
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item ) {
+        int id = item.getItemId();
 
-        Button button = (Button) findViewById(R.id.button_fortune);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), TopActivity.class);
-                startActivity(intent);
+        if (id == R.id.action_back) {
+            Intent intent = new Intent(getApplication(), MainActivity.class);
+            startActivity(intent);
 
-                finish();
-            }
-        });
+            finish();
+
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
+
+
 
     protected void setFortuneResult() {
 

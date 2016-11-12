@@ -11,10 +11,31 @@
     tools:context="com.example.garai.starwars.SettingActivity"
     android:background="@color/basic_white1">
 
-    <ListView android:id="@+id/listView1"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+    <TimePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:timePickerMode="spinner"
+        android:id="@+id/timePicker"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/basic_blue2" />
+
+    <TextView
+        android:text="通知時刻設定"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
-    </ListView>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
+        android:id="@+id/textView"
+        android:textSize="24sp" />
+
+    <Button
+        android:text="設定する"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:id="@+id/button_timeset" />
 </RelativeLayout>

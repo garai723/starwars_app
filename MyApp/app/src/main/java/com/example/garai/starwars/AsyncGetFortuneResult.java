@@ -1,21 +1,21 @@
 package com.example.garai.starwars;
 
-        import java.io.BufferedInputStream;
-        import java.io.ByteArrayOutputStream;
-        import java.io.IOException;
-        import java.io.InputStream;
-        import java.net.HttpURLConnection;
-        import java.net.MalformedURLException;
-        import java.net.URL;
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
-        import org.json.JSONException;
-        import org.json.JSONObject;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-        import android.os.AsyncTask;
-        import android.text.TextUtils;
-        import android.util.Log;
-        import android.widget.ImageView;
-        import android.widget.TextView;
+import android.os.AsyncTask;
+import android.text.TextUtils;
+import android.util.Log;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class AsyncGetFortuneResult extends AsyncTask<String, Void, JSONObject> {
 

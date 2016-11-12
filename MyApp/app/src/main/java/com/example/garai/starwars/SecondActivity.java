@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -31,27 +32,13 @@ public class SecondActivity extends AppMenuActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
+        RelativeLayout layout = (RelativeLayout)findViewById(R.id.activity_second);
 
-        backToTop();
+        changeBackGround(layout);
 
         moveResult();
 
     }
-
-    /**
-     * backボタンが押されたとき
-     */
-    protected void backToTop() {
-        Button returnButton = (Button) findViewById(R.id.button_back);
-        returnButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
-    }
-
 
 
     /**

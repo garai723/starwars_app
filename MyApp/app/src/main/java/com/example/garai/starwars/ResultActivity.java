@@ -7,14 +7,23 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class ResultActivity extends AppMenuActivity {
+
+    Globals globals;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+
+        globals=(Globals)this.getApplication();
+
+        RelativeLayout layout = (RelativeLayout)findViewById(R.id.activity_result);
+
+        changeBackGround(layout);
 
         //値受け取り
         Intent intent=getIntent();
@@ -32,9 +41,7 @@ public class ResultActivity extends AppMenuActivity {
         Log.d("GET",birthday);
         Log.d("UUID",uuid);
 
-        //TODO サーバー通信&キャラ絵表示
-
-        setCharInfo(uuid,bloodId,weaponId,birthday,partnerId);
+        setCharInfo(globals.themeId,uuid,bloodId,weaponId,birthday,partnerId);
 
         moveToFortune();
 
