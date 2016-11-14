@@ -105,4 +105,12 @@ public class FortuneActivity extends AppMenuActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+
+        RelativeLayout layout = (RelativeLayout) findViewById(R.id.activity_fortune);
+        changeBackGround(layout);
+
+    }
+
 }

@@ -24,18 +24,17 @@ public class MainActivity extends AppMenuActivity {
 
     Globals globals;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        globals=(Globals)this.getApplication();
+        globals = (Globals) this.getApplication();
 
-        RelativeLayout layout = (RelativeLayout)findViewById(R.id.activity_main);
+        RelativeLayout layout = (RelativeLayout) findViewById(R.id.activity_main);
 
-       // getUserTheme(layout);
-
-        changeBackGround(layout);
+        getUserTheme(layout);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.drawable.logo_menu);
@@ -58,6 +57,14 @@ public class MainActivity extends AppMenuActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+
+        RelativeLayout layout = (RelativeLayout) findViewById(R.id.activity_main);
+        changeBackGround(layout);
+
     }
 
 }

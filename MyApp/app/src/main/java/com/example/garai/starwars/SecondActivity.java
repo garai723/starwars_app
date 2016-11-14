@@ -104,7 +104,13 @@ public class SecondActivity extends AppMenuActivity {
     }
 
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
 
+        RelativeLayout layout = (RelativeLayout) findViewById(R.id.activity_second);
+        changeBackGround(layout);
+
+    }
 
 }
 

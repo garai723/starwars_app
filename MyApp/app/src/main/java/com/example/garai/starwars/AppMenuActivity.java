@@ -69,12 +69,14 @@ public class AppMenuActivity extends AppCompatActivity {
             case R.id.menu_theme:
                 Intent intent = new Intent(getApplication(), ThemeActivity.class);
                 intent.putExtra("INTENT", getIntent());
-                startActivity(intent);
+
+                startActivityForResult(intent,0);
+
                 break;
             case R.id.menu_root:
-                    Intent rootIntent = new Intent(getApplication(), SettingActivity.class);
-                    startActivity(rootIntent);
-                    break;
+                Intent rootIntent = new Intent(getApplication(), SettingActivity.class);
+                startActivity(rootIntent);
+                break;
             case R.id.menu_version:
                 Intent versionIntent = new Intent(getApplication(), VesionActivity.class);
                 startActivity(versionIntent);
@@ -84,6 +86,8 @@ public class AppMenuActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
 
     protected void setCharInfo(String themeId, String... strings) {
@@ -160,23 +164,27 @@ public class AppMenuActivity extends AppCompatActivity {
 
 
     protected void getUserTheme(final RelativeLayout layout) {
+
         AsyncGetSWAPIResult swapi = new AsyncGetSWAPIResult(new AsyncGetSWAPIResult.AsyncTaskCallback() {
 
             public void postExecute(JSONObject result) {
 
                 try {
+
+                    Log.d("RESULT", String.valueOf(result));
+
                     String theme = (String) result.get("user_theme");
                     globals.themeId = theme;
 
                     changeBackGround(layout);
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
         });
 
-        swapi.execute("http://27.120.120.174/StarWars/Index.php?uuid=" + getId());
-
+        swapi.execute("http://27.120.120.174/StarWars/UserTheme.php?uuid=" + getId());
     }
 
 
@@ -219,13 +227,13 @@ public class AppMenuActivity extends AppCompatActivity {
                 try {
                     Log.d("AAAAA", String.valueOf(result));
 
-                    String hour= (String) result.get("notification_hour");
-                    String minute= (String) result.get("notification_minute");
+                    String hour = (String) result.get("notification_hour");
+                    String minute = (String) result.get("notification_minute");
 
-                    Log.d("TIME",hour);
-                    Log.d("TIME",minute);
+                    Log.d("TIME", hour);
+                    Log.d("TIME", minute);
 
-                    setNotification(hour,minute);
+                    setNotification(hour, minute);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -234,7 +242,7 @@ public class AppMenuActivity extends AppCompatActivity {
             }
         });
 
-        swapi.execute("http://27.120.120.174/StarWars/Time.php?uuid=" + getId()+"&hour="+ints[0]+"&minute="+ints[1]);
+        swapi.execute("http://27.120.120.174/StarWars/Time.php?uuid=" + getId() + "&hour=" + ints[0] + "&minute=" + ints[1]);
 
 
     }
@@ -255,10 +263,9 @@ public class AppMenuActivity extends AppCompatActivity {
         // 初回実行時間設定（過去の時間設定の場合即実行）
         calendar.set(java.util.Calendar.YEAR, year);
         calendar.set(java.util.Calendar.MONTH, month);
-        calendar.set(java.util.Calendar.DATE, date+1);
+        calendar.set(java.util.Calendar.DATE, date + 1);
         calendar.set(java.util.Calendar.HOUR_OF_DAY, Integer.parseInt(strings[0]));
         calendar.set(java.util.Calendar.MINUTE, Integer.parseInt(strings[1]));
-
 
 
         //処理の実行感覚

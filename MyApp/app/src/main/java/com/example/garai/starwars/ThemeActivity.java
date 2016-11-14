@@ -60,6 +60,7 @@ public class ThemeActivity extends AppMenuActivity {
 
 
                 globals.UpdateTheme(getId(), itemId);
+                setResult(0);
                 finish();
 
             }
