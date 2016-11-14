@@ -3,22 +3,22 @@
 
     <string name="string_setting">Setteing</string>
 
-    <string name="A"><u>1.A型</u></string>
+    <string name="A">1.A型</string>
     <string name="B">2.B型</string>
     <string name="AB">3.AB型</string>
     <string name="O">4.O型</string>
 
-    <string name="saver"><u>1.ライトセーバー</u></string>
+    <string name="saver">1.ライトセーバー</string>
     <string name="bluster">2.ブラスター</string>
     <string name="pieces">3.素手</string>
     <string name="force">4.フォース</string>
 
-    <string name="phone"><u>1.スマホ</u></string>
+    <string name="phone">1.スマホ</string>
     <string name="ukyo">2.杉下右京</string>
     <string name="chubakka">3.チューバッカ</string>
     <string name="r2d2">4.R2-D2</string>
 
-    <string name="black"><u>1.黒髪</u></string>
+    <string name="black">1.黒髪</string>
     <string name="brown">2.茶髪</string>
     <string name="none">3.髪無し</string>
     <string name="others">4.その他</string>
@@ -30,7 +30,7 @@
     <string-array name="theme_list">
         <item>デフォルト</item>
         <item>ブラック</item>
-        <item>ピンク</item>
+        <item>イエロー</item>
     </string-array>
 
     <string-array name="color_list">

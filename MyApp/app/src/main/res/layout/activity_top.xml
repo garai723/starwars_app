@@ -22,7 +22,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center_vertical|center_horizontal|center">
+            android:gravity="center_vertical|center_horizontal|center"
+            android:weightSum="1">
 
 
                 <TextView
@@ -60,13 +61,21 @@
                 android:background="@color/basic_blue2" />
 
             <Button
+                android:id="@+id/button_top"
+                android:background="@drawable/fortune"
+                android:layout_weight="0.07"
+                android:layout_width="128dp"
+                android:layout_height="112dp" />
+
+            <Button
                 android:layout_width="128dp"
                 android:layout_height="112dp"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="122dp"
-                android:id="@+id/button_top"
-                android:background="@drawable/fortune" />
+                android:id="@+id/button_restart"
+                android:background="@drawable/btn_check" />
+
         </LinearLayout>
     </ScrollView>
 

@@ -1,6 +1,8 @@
 package com.example.garai.starwars;
 
 import android.app.Application;
+import android.content.Intent;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -14,7 +16,7 @@ public class Globals extends Application {
 
     String themeId = "1";
 
-    public int UpdateTheme(String uuid, String theme) {
+    public int UpdateTheme(String uuid, String theme  ) {
 
         themeId = theme;
 
@@ -24,10 +26,12 @@ public class Globals extends Application {
 
                 try {
                     themeId = (String) result.get("user_theme");
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
+                Toast.makeText(getApplicationContext(), "テーマを変更しました", Toast.LENGTH_SHORT).show();
             }
         });
 

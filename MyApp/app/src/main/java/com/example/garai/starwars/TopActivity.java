@@ -22,8 +22,14 @@ public class TopActivity extends AppMenuActivity {
 
         moveToFortune();
 
+        restartFortune();
+
     }
 
+
+    /**
+     * 運勢を見るボタンが押された時
+     */
     protected void moveToFortune() {
         Button button = (Button) findViewById(R.id.button_top);
         button.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +37,22 @@ public class TopActivity extends AppMenuActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), FortuneActivity.class);
                 startActivity(intent);
+            }
+        });
+    }
+
+
+    /**
+     * 再診断ボタンが押されたとき
+     */
+    protected void restartFortune() {
+        Button button = (Button) findViewById(R.id.button_restart);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                deleteUserInfo();
+
             }
         });
     }

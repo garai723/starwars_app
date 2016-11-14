@@ -1,7 +1,9 @@
 package com.example.garai.starwars;
 
 import android.content.Intent;
+import android.os.Build;
 import android.provider.Settings;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,7 +33,7 @@ public class MainActivity extends AppMenuActivity {
 
         RelativeLayout layout = (RelativeLayout)findViewById(R.id.activity_main);
 
-        getUserTheme(layout);
+       // getUserTheme(layout);
 
         changeBackGround(layout);
 

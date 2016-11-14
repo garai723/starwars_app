@@ -14,7 +14,7 @@ package com.example.garai.starwars;
         import org.json.JSONException;
         import org.json.JSONObject;
 
-public class SplashActivity extends Activity {
+public class SplashActivity extends AppCompatActivity {
 
 
 

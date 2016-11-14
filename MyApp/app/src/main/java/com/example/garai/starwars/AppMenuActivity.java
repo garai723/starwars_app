@@ -69,6 +69,7 @@ public class AppMenuActivity extends AppCompatActivity {
                 break;
             case R.id.menu_theme:
                 Intent intent = new Intent(getApplication(), ThemeActivity.class);
+                intent.putExtra("INTENT", getIntent());
                 startActivity(intent);
                 break;
             case R.id.menu_root:
@@ -81,7 +82,14 @@ public class AppMenuActivity extends AppCompatActivity {
                     Intent rootIntent = new Intent(getApplication(), SettingActivity.class);
                     startActivity(rootIntent);
                     break;
+                } else {
+                    Toast.makeText(getApplicationContext(), "権限がありません", Toast.LENGTH_SHORT).show();
+                    break;
                 }
+            case R.id.menu_version:
+                Intent versionIntent = new Intent(getApplication(), VesionActivity.class);
+                startActivity(versionIntent);
+                break;
         }
 
 
@@ -157,8 +165,6 @@ public class AppMenuActivity extends AppCompatActivity {
             }
         });
 
-        String uuid = getId();
-
         swapi.execute("http://27.120.120.174/StarWars/Index.php?uuid=" + getId());
 
     }
@@ -184,6 +190,21 @@ public class AppMenuActivity extends AppCompatActivity {
 
     }
 
+
+    protected void deleteUserInfo() {
+        AsyncGetSWAPIResult swapi = new AsyncGetSWAPIResult(new AsyncGetSWAPIResult.AsyncTaskCallback() {
+
+            public void postExecute(JSONObject result) {
+
+                Intent intent = new Intent(getApplication(), SecondActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        swapi.execute("http://27.120.120.174/StarWars/DeleteUserType.php?uuid=" + getId());
+
+    }
+
     protected void changeBackGround(RelativeLayout layout) {
 
         switch (globals.themeId) {
@@ -196,6 +217,30 @@ public class AppMenuActivity extends AppCompatActivity {
             case "3":
                 layout.setBackgroundResource(android.R.color.holo_orange_light);
         }
+    }
+
+    /**
+     *
+     */
+    protected void setNotificationTime() {
+        AsyncGetSWAPIResult swapi = new AsyncGetSWAPIResult(new AsyncGetSWAPIResult.AsyncTaskCallback() {
+
+            public void postExecute(JSONObject result) {
+                try {
+                    String hour= (String) result.get("notification_hour");
+                    String minute= (String) result.get("notification_minute");
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
+        swapi.execute("http://27.120.120.174/StarWars/DeleteUserType.php?uuid=" + getId());
+
+
     }
 }
 

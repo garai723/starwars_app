@@ -138,5 +138,8 @@ public class SecondActivity extends AppMenuActivity {
         //確認用トースト（後で消去）
         Toast.makeText(getApplicationContext(), "SET NOTIFICATION", Toast.LENGTH_SHORT).show();
     }
+
+
+
 }
 
