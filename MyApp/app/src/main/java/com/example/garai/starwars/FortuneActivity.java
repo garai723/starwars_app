@@ -33,23 +33,6 @@ public class FortuneActivity extends AppMenuActivity {
 
     }
 
-    @TargetApi(Build.VERSION_CODES.N)
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item ) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_back) {
-            Intent intent = new Intent(getApplication(), MainActivity.class);
-            startActivity(intent);
-
-            finish();
-
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-
 
     protected void setFortuneResult() {
 
@@ -86,6 +69,11 @@ public class FortuneActivity extends AppMenuActivity {
                                 RatingBar jobRating = (RatingBar) findViewById(R.id.rating_job);
                                 RatingBar loveRating = (RatingBar) findViewById(R.id.rating_love);
                                 RatingBar totalRating = (RatingBar) findViewById(R.id.rating_total);
+
+                                moneyRating.setMax(5);
+                                jobRating.setMax(5);
+                                loveRating.setMax(5);
+                                totalRating.setMax(5);
 
                                 textView.setText(fortune);
                                 moneyRating.setRating(moneyLevel);

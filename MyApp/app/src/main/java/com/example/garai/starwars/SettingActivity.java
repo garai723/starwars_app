@@ -17,13 +17,18 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class SettingActivity extends AppCompatActivity {
+public class SettingActivity extends AppMenuActivity {
 
     @TargetApi(Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+
+        TimePicker timePicker = (TimePicker) findViewById(R.id.timePicker);
+        timePicker.setIs24HourView(true);
+
+        setTime(timePicker);
 
 
 
@@ -32,15 +37,13 @@ public class SettingActivity extends AppCompatActivity {
     /**
      * 通知設定
      */
-    protected void setTime(){
+    protected void setTime(final TimePicker timePicker){
         Button button = (Button)findViewById(R.id.button_timeset);
         button.setOnClickListener(new View.OnClickListener() {
             @TargetApi(Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
 
-                TimePicker timePicker = (TimePicker) findViewById(R.id.timePicker);
-                timePicker.setIs24HourView(true);
 
                 int notifyTime = timePicker.getHour();
                 int notifyMinute = timePicker.getMinute();
@@ -48,6 +51,8 @@ public class SettingActivity extends AppCompatActivity {
                 Log.d("TIME", String.valueOf(notifyTime));
                 Log.d("MINUTE", String.valueOf(notifyMinute));
 
+                setNotificationTime(notifyTime,notifyMinute);
+                finish();
 
             }
         });

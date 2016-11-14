@@ -33,7 +33,7 @@ public class Notifier extends BroadcastReceiver {
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setTicker("時間です")
                 .setWhen(System.currentTimeMillis())
-                .setContentTitle("TestAlarm " + bid)
+                .setContentTitle("今日の運勢は？")
                 .setContentText("時間になりました")
                 // 音、バイブレート、LEDで通知
                 .setDefaults(Notification.DEFAULT_ALL)
