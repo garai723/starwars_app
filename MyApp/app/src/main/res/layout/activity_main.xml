@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -8,17 +9,28 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/top_bg"
+
 
     tools:context="com.example.garai.starwars.MainActivity">
 
-    <Button
-        android:text="START"
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/btn_start_2"
+        android:id="@+id/imageButton"
+        android:background="@android:color/transparent"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
-        android:id="@+id/button"
-        android:onClick="showToast (MainActivity)"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        app:srcCompat="@drawable/title_logo"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="94dp" />
+
+
 </RelativeLayout>

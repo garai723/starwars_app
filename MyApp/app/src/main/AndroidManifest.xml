@@ -2,21 +2,54 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.garai.starwars">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
+        android:name=".Globals"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo_menu"
         android:label="@string/app_name"
+        android:logo="@drawable/logo_menu"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/Theme.AppCompat.Light">
+        <activity
+            android:name=".SplashActivity"
+            android:logo="@drawable/logo_menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SecondActivity" />
-        <activity android:name=".ResultActivity"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:logo="@drawable/logo_menu" />
+        <activity
+            android:name=".SecondActivity"
+            android:logo="@drawable/logo_menu" />
+        <activity
+            android:name=".ResultActivity"
+            android:logo="@drawable/logo_menu" />
+        <activity
+            android:name=".NotifyActivity"
+            android:logo="@drawable/logo_menu" />
+
+        <receiver
+            android:name=".Notifier"
+            android:process=":remote" />
+
+        <activity
+            android:name=".SettingActivity"
+            android:logo="@drawable/logo_menu" />
+        <activity
+            android:name=".FortuneActivity"
+            android:logo="@drawable/logo_menu" />
+        <activity
+            android:name=".TopActivity"
+            android:logo="@drawable/logo_menu" />
+        <activity android:name=".ThemeActivity" />
+        <activity android:name=".VesionActivity"></activity>
     </application>
 
 </manifest>

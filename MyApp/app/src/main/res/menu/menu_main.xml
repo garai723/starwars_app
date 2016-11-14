@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="テーマ変更"
+        android:id="@+id/menu_theme" />
+    <item android:title="通知時刻設定"
+        android:id="@+id/menu_root" />
+    <item android:title="バージョンについて"
+        android:id="@+id/menu_version" />
+</menu>
