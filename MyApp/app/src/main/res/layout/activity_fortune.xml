@@ -56,13 +56,9 @@
 
             <RatingBar
                 android:id="@+id/rating_money"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/basic_blue2"
-                android:layout_marginEnd="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginStart="20dp"
+                android:background="@android:color/transparent"
                 style="@style/MyRating"
                 android:numStars="5"
                 android:stepSize="0.5"
@@ -82,14 +78,10 @@
 
             <RatingBar
                 android:id="@+id/rating_job"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/basic_blue2"
-                style="@style/MyRating"
-                android:layout_marginEnd="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginStart="20dp" />
+                android:background="@android:color/transparent"
+                style="@style/MyRating" />
 
 
             <TextView
@@ -105,14 +97,10 @@
 
             <RatingBar
                 android:id="@+id/rating_love"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/basic_blue2"
-                style="@style/MyRating"
-                android:layout_marginEnd="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginStart="20dp" />
+                android:background="@android:color/transparent"
+                style="@style/MyRating" />
 
 
             <TextView
@@ -129,14 +117,10 @@
 
             <RatingBar
                 android:id="@+id/rating_total"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/basic_blue2"
-                style="@style/MyRating"
-                android:layout_marginEnd="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginStart="20dp" />
+                android:background="@android:color/transparent"
+                style="@style/MyRating" />
 
         </LinearLayout>
     </ScrollView>

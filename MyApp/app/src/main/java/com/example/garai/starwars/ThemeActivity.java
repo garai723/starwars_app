@@ -24,9 +24,9 @@ public class ThemeActivity extends AppMenuActivity {
         setContentView(R.layout.activity_theme);
 
 
-        globals=(Globals)this.getApplication();
+        globals = (Globals) this.getApplication();
 
-        String[] strings = {"デフォルト", "ブラック", "イエロー"};
+        String[] strings = {"デフォルト", "グリーン", "パープル"};
 
         ListView listView = (ListView) findViewById(R.id.list_theme);
 
@@ -43,23 +43,23 @@ public class ThemeActivity extends AppMenuActivity {
                 ListView listView = (ListView) parent;
                 String item = (String) listView.getItemAtPosition(pos);
 
-                Log.d("LIST",item);
+                Log.d("LIST", item);
 
-                String  itemId;
+                String itemId;
 
-                switch (item){
-                    case "ブラック":
-                        itemId="2";
+                switch (item) {
+                    case "グリーン":
+                        itemId = "2";
                         break;
-                    case "イエロー":
-                        itemId="3";
+                    case "パープル":
+                        itemId = "3";
                         break;
                     default:
-                        itemId="1";
+                        itemId = "1";
                 }
 
 
-                globals.UpdateTheme(getId(),itemId);
+                globals.UpdateTheme(getId(), itemId);
                 finish();
 
             }
