@@ -59,12 +59,14 @@ public class FortuneActivity extends AppMenuActivity {
                                 Log.d("JSON", result.toString(4));
 
                                 String fortune = (String) result.get("content");
+                                String lucky = (String)result.get("item");
                                 int moneyLevel = (int) result.get("money");
                                 int jobLevel = (int) result.get("job");
                                 int loveLevel = (int) result.get("love");
                                 int totalLevel = (int) result.get("total");
 
                                 TextView textView = (TextView) findViewById(R.id.text_fortune);
+                                TextView textView1=(TextView)findViewById(R.id.text_lucky);
                                 RatingBar moneyRating = (RatingBar) findViewById(R.id.rating_money);
                                 RatingBar jobRating = (RatingBar) findViewById(R.id.rating_job);
                                 RatingBar loveRating = (RatingBar) findViewById(R.id.rating_love);
@@ -76,6 +78,7 @@ public class FortuneActivity extends AppMenuActivity {
                                 totalRating.setMax(5);
 
                                 textView.setText(fortune);
+                                textView1.setText(lucky);
                                 moneyRating.setRating(moneyLevel);
                                 jobRating.setRating(jobLevel);
                                 loveRating.setRating(loveLevel);

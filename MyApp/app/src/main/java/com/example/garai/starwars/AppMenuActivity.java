@@ -1,16 +1,19 @@
 package com.example.garai.starwars;
 
+import android.app.ActionBar;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -40,9 +43,13 @@ public class AppMenuActivity extends AppCompatActivity {
 
         globals = (Globals) this.getApplication();
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+
+
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.logo_menu);
+        getSupportActionBar().setIcon(R.drawable.menu_logo);
     }
 
 
@@ -81,6 +88,10 @@ public class AppMenuActivity extends AppCompatActivity {
                 Intent versionIntent = new Intent(getApplication(), VesionActivity.class);
                 startActivity(versionIntent);
                 break;
+            case android.R.id.home:
+                // app icon in action bar clicked;
+               finish();
+            default:
         }
 
 
@@ -118,8 +129,11 @@ public class AppMenuActivity extends AppCompatActivity {
                     final TextView textView = (TextView) findViewById(R.id.text_name);
                     final TextView textProfile = (TextView) findViewById(R.id.text_profile);
 
+                    textView.setTypeface(Typeface.createFromAsset(getAssets(),"Meiryo.ttf"));
                     textView.setText(charName);
-                    textProfile.setText(profile);
+                    String html = "【診断結果】<br>";
+                    CharSequence source = Html.fromHtml(html);
+                    textProfile.setText(source+profile);
                     imageView.setImageResource(res);
 
                     Log.d("SWAPI_NAME", String.valueOf(result));
@@ -193,8 +207,7 @@ public class AppMenuActivity extends AppCompatActivity {
 
             public void postExecute(JSONObject result) {
 
-                Intent intent = new Intent(getApplication(), SecondActivity.class);
-                startActivity(intent);
+
             }
         });
 

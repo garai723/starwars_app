@@ -6,9 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"><![CDATA[
     tools:context="com.example.garai.starwars.SecondActivity">
 
@@ -24,7 +21,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_horizontal"
             android:orientation="vertical"
             android:weightSum="1">
 
@@ -32,62 +28,77 @@
                 android:id="@+id/text_height"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="5dp"
                 android:text="血液型は？"
                 android:textColor="@android:color/background_light"
                 android:textSize="15sp"
                 android:textStyle="normal|bold"
                 tools:text="血液型は？" />
 
+            <View
+            android:layout_width="wrap_content"
+            android:layout_height="1px"
+            android:background="#ffffff"
+            android:layout_marginBottom="5dp" />
+
+
             <RadioGroup
                 android:id="@+id/radio_blood"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_marginBottom="20dp"
                 android:checkedButton="@+id/leftBtn"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_height="50dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginStart="20dp">
 
                 <RadioButton
                     android:id="@+id/blood_a"
-                    android:layout_width="60dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/radio_left"
                     android:button="@null"
                     android:gravity="center"
                     android:text="1"
                     android:textColor="@drawable/radio_text_color"
-                    android:checked="true" />
+                    android:checked="true"
+                    android:layout_weight="4"/>
 
                 <RadioButton
                     android:id="@+id/blood_b"
-                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/radio_center"
                     android:button="@null"
                     android:gravity="center"
                     android:text="2"
-                    android:textColor="@drawable/radio_text_color" />
+                    android:textColor="@drawable/radio_text_color"
+                    android:layout_width="match_parent"
+                    android:layout_weight="4"/>
 
                 <RadioButton
                     android:id="@+id/blood_ab"
-                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/radio_center"
                     android:button="@null"
                     android:gravity="center"
                     android:text="3"
-                    android:textColor="@drawable/radio_text_color" />
+                    android:textColor="@drawable/radio_text_color"
+                    android:layout_width="match_parent"
+                    android:layout_weight="4"/>
 
 
                 <RadioButton
                     android:id="@+id/blood_o"
-                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/radio_right"
                     android:button="@null"
                     android:gravity="center"
                     android:text="4"
-                    android:textColor="@drawable/radio_text_color" />
+                    android:textColor="@drawable/radio_text_color"
+                    android:layout_width="match_parent"
+                    android:layout_weight="4"/>
             </RadioGroup>
 
 
@@ -114,7 +125,8 @@
                         android:layout_height="wrap_content"
                         android:text="@string/B"
                         android:textColor="@color/radio_white_color"
-                    android:layout_weight="1" />
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp" />
 
             </LinearLayout>
 
@@ -149,63 +161,77 @@
                 android:id="@+id/text_weight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="5dp"
                 android:text="敵に囲まれた！どの武器を選ぶ？"
                 android:textColor="@android:color/background_light"
                 android:textSize="15sp"
                 android:textStyle="normal|bold"
                 tools:text="敵に囲まれた！どの武器を選ぶ？" />
 
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1px"
+                android:background="#ffffff"
+                android:layout_marginBottom="5dp" />
+
 
             <RadioGroup
                 android:id="@+id/radio_weapon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_marginBottom="20dp"
                 android:checkedButton="@+id/leftBtn"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_height="50dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginStart="20dp">
 
                 <RadioButton
                     android:id="@+id/weapon_saver"
-                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/radio_left"
                     android:button="@null"
                     android:gravity="center"
                     android:text="1"
                     android:textColor="@drawable/radio_text_color"
-                    android:checked="true" />
+                    android:checked="true"
+                    android:layout_width="match_parent"
+                    android:layout_weight="4"/>
 
                 <RadioButton
                     android:id="@+id/weapon_force"
-                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/radio_center"
                     android:button="@null"
                     android:gravity="center"
                     android:text="2"
-                    android:textColor="@drawable/radio_text_color" />
+                    android:textColor="@drawable/radio_text_color"
+                    android:layout_width="match_parent"
+                    android:layout_weight="4"/>
 
                 <RadioButton
                     android:id="@+id/weapon_bluster"
-                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/radio_center"
                     android:button="@null"
                     android:gravity="center"
                     android:text="3"
-                    android:textColor="@drawable/radio_text_color" />
+                    android:textColor="@drawable/radio_text_color"
+                    android:layout_width="match_parent"
+                    android:layout_weight="4"/>
 
 
                 <RadioButton
                     android:id="@+id/waepn_piece"
-                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/radio_right"
                     android:button="@null"
                     android:gravity="center"
                     android:text="4"
-                    android:textColor="@drawable/radio_text_color" />
+                    android:textColor="@drawable/radio_text_color"
+                    android:layout_width="match_parent"
+                    android:layout_weight="4"/>
             </RadioGroup>
 
             <LinearLayout
@@ -259,69 +285,85 @@
                     android:layout_height="wrap_content"
                     android:text="@string/force"
                     android:textColor="@color/radio_white_color"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginLeft="70dp" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/text_partner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="5dp"
                 android:elevation="1dp"
                 android:text="あなたの相棒は？"
                 android:textColor="@android:color/background_light"
                 android:textSize="15sp"
                 android:textStyle="normal|bold" />
 
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1px"
+                android:background="#ffffff"
+                android:layout_marginBottom="5dp" />
+
             <RadioGroup
                 android:id="@+id/radio_partner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_marginBottom="20dp"
                 android:checkedButton="@+id/leftBtn"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_height="50dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginStart="20dp">
 
                 <RadioButton
                     android:id="@+id/partner_1"
-                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/radio_left"
                     android:button="@null"
                     android:gravity="center"
                     android:text="1"
                     android:textColor="@drawable/radio_text_color"
-                    android:checked="true" />
+                    android:checked="true"
+                    android:layout_width="match_parent"
+                    android:layout_weight="4"/>
 
                 <RadioButton
                     android:id="@+id/partner_2"
-                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/radio_center"
                     android:button="@null"
                     android:gravity="center"
                     android:text="2"
-                    android:textColor="@drawable/radio_text_color" />
+                    android:textColor="@drawable/radio_text_color"
+                    android:layout_width="match_parent"
+                    android:layout_weight="4"/>
+
 
                 <RadioButton
                     android:id="@+id/partner_3"
-                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/radio_center"
                     android:button="@null"
                     android:gravity="center"
                     android:text="3"
-                    android:textColor="@drawable/radio_text_color" />
-
+                    android:textColor="@drawable/radio_text_color"
+                    android:layout_width="match_parent"
+                    android:layout_weight="4"/>
 
                 <RadioButton
                     android:id="@+id/partner_4"
-                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/radio_right"
                     android:button="@null"
                     android:gravity="center"
                     android:text="4"
-                    android:textColor="@drawable/radio_text_color" />
+                    android:textColor="@drawable/radio_text_color"
+                    android:layout_width="match_parent"
+                    android:layout_weight="4"/>
             </RadioGroup>
 
 
@@ -348,7 +390,9 @@
                     android:layout_height="wrap_content"
                     android:text="@string/ukyo"
                     android:textColor="@color/radio_white_color"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="40dp" />
 
             </LinearLayout>
 
@@ -384,63 +428,76 @@
                 android:id="@+id/text_hair"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="5dp"
                 android:elevation="1dp"
                 android:text="あなたの髪色は？"
                 android:textColor="@android:color/background_light"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textStyle="normal|bold" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1px"
+                android:background="#ffffff"
+                android:layout_marginBottom="5dp" />
 
 
             <RadioGroup
                 android:id="@+id/radio_hair"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_marginBottom="20dp"
                 android:checkedButton="@+id/leftBtn"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_height="50dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
 
                 <RadioButton
                     android:id="@+id/hair_1"
-                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/radio_left"
                     android:button="@null"
                     android:gravity="center"
                     android:text="1"
                     android:textColor="@drawable/radio_text_color"
-                    android:checked="true" />
+                    android:checked="true"
+                    android:layout_width="match_parent"
+                    android:layout_weight="4"/>
 
                 <RadioButton
                     android:id="@+id/hair_2"
-                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/radio_center"
                     android:button="@null"
                     android:gravity="center"
                     android:text="2"
-                    android:textColor="@drawable/radio_text_color" />
+                    android:textColor="@drawable/radio_text_color"
+                    android:layout_width="match_parent"
+                    android:layout_weight="4"/>
+
 
                 <RadioButton
                     android:id="@+id/hair_3"
-                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/radio_center"
                     android:button="@null"
                     android:gravity="center"
                     android:text="3"
-                    android:textColor="@drawable/radio_text_color" />
-
+                    android:textColor="@drawable/radio_text_color"
+                    android:layout_width="match_parent"
+                    android:layout_weight="4"/>
 
                 <RadioButton
                     android:id="@+id/hair_4"
-                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/radio_right"
                     android:button="@null"
                     android:gravity="center"
                     android:text="4"
-                    android:textColor="@drawable/radio_text_color" />
+                    android:textColor="@drawable/radio_text_color"
+                    android:layout_width="match_parent"
+                    android:layout_weight="4"/>
             </RadioGroup>
 
             <LinearLayout
@@ -466,7 +523,9 @@
                     android:layout_height="wrap_content"
                     android:text="@string/brown"
                     android:textColor="@color/radio_white_color"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp" />
 
             </LinearLayout>
 
@@ -501,40 +560,68 @@
                 android:id="@+id/text_birth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="5dp"
                 android:text="生年月日はいつですか？"
                 android:textColor="@android:color/background_light"
                 android:textSize="15sp"
                 android:textStyle="normal|bold"
                 tools:text="生年月日はいつですか？" />
 
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1px"
+                android:background="#ffffff"
+                android:layout_marginBottom="5dp" />
+
 
             <DatePicker
                 android:id="@+id/datePicker2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="100dp"
                 android:background="@color/basic_blue2"
                 android:calendarViewShown="false"
                 android:yearListSelectorColor="@color/basic_white1"
                 android:datePickerMode="spinner"
                 android:spinnersShown="true"
+                android:layout_weight="1"
                 style="@style/MyDialog"/>
 
 
-            <Button
-                android:id="@+id/button_result"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="23dp"
-                android:background="@drawable/btn_check"
-                android:layout_width="139dp"
-                android:layout_weight="0.07"
-                android:layout_height="100dp" />
-
         </LinearLayout>
     </ScrollView>
+
+    <LinearLayout
+        android:gravity="bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="bottom"
+            android:background="@android:color/background_light"
+            android:layout_width="match_parent"
+            android:layout_height="88dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/check_fix"
+                android:id="@+id/button_result"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:text="診断する"
+                android:textColor="@color/basic_white1"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>

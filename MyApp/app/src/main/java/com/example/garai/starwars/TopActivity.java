@@ -52,7 +52,9 @@ public class TopActivity extends AppMenuActivity {
             @Override
             public void onClick(View v) {
 
-                deleteUserInfo();
+                Intent intent = new Intent(getApplication(), SecondActivity.class);
+                intent.putExtra("delete_flg",1);
+                startActivity(intent);
 
             }
         });

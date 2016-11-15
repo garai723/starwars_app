@@ -11,17 +11,9 @@
     android:paddingTop="@dimen/activity_vertical_margin"
 
 
-    tools:context="com.example.garai.starwars.MainActivity">
+    tools:context="com.example.garai.starwars.MainActivity"
+    android:background="@drawable/background">
 
-
-    <ImageButton
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:srcCompat="@drawable/btn_start_2"
-        android:id="@+id/imageButton"
-        android:background="@android:color/transparent"
-        android:layout_below="@+id/imageView"
-        android:layout_alignParentStart="true" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -31,6 +23,14 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="94dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:background="@drawable/start_1"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_height="112dp"
+        android:layout_width="144dp" />
 
 
 </RelativeLayout>
