@@ -9,9 +9,9 @@
     <application
         android:name=".Globals"
         android:allowBackup="true"
-        android:icon="@drawable/logo_menu"
-        android:label="@string/app_name"
-        android:logo="@drawable/logo_menu"
+        android:icon="@drawable/ic_launcher"
+        android:label=""
+        android:logo="@drawable/logo_sw"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
         <activity

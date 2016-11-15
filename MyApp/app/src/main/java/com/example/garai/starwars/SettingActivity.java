@@ -3,6 +3,7 @@ package com.example.garai.starwars;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -40,7 +41,8 @@ public class SettingActivity extends AppMenuActivity {
     protected void setTime(final TimePicker timePicker){
         Button button = (Button)findViewById(R.id.button_timeset);
         button.setOnClickListener(new View.OnClickListener() {
-            @TargetApi(Build.VERSION_CODES.M)
+
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
 

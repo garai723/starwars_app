@@ -1,11 +1,13 @@
 package com.example.garai.starwars;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Build;
 import android.provider.Settings;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -24,21 +26,25 @@ public class MainActivity extends AppMenuActivity {
 
     Globals globals;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        globals=(Globals)this.getApplication();
+        ActionBar actionBar = getActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
-        RelativeLayout layout = (RelativeLayout)findViewById(R.id.activity_main);
+        globals = (Globals) this.getApplication();
 
-       // getUserTheme(layout);
+        RelativeLayout layout = (RelativeLayout) findViewById(R.id.activity_main);
 
-        changeBackGround(layout);
+        getUserTheme(layout);
 
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.logo_menu);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setHomeButtonEnabled(false);
 
         moveInputPage();
 
@@ -58,6 +64,14 @@ public class MainActivity extends AppMenuActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+
+        RelativeLayout layout = (RelativeLayout) findViewById(R.id.activity_main);
+        changeBackGround(layout);
+
     }
 
 }

@@ -19,29 +19,29 @@ public class ResultActivity extends AppMenuActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        globals=(Globals)this.getApplication();
+        globals = (Globals) this.getApplication();
 
-        RelativeLayout layout = (RelativeLayout)findViewById(R.id.activity_result);
+        RelativeLayout layout = (RelativeLayout) findViewById(R.id.activity_result);
 
         changeBackGround(layout);
 
         //値受け取り
-        Intent intent=getIntent();
-        String bloodId=intent.getStringExtra("BLOOD");
-        String weaponId=intent.getStringExtra("WEAPON");
-        String partnerId=intent.getStringExtra("PARTNER");
-        String birthday=intent.getStringExtra("BIRTHDAY");
+        Intent intent = getIntent();
+        String bloodId = intent.getStringExtra("BLOOD");
+        String weaponId = intent.getStringExtra("WEAPON");
+        String partnerId = intent.getStringExtra("PARTNER");
+        String birthday = intent.getStringExtra("BIRTHDAY");
 
         //UUID取得
-        String uuid=getId();
+        String uuid = getId();
 
         Log.d("GET", String.valueOf(bloodId));
         Log.d("GET", String.valueOf(weaponId));
         Log.d("GET", String.valueOf(partnerId));
-        Log.d("GET",birthday);
-        Log.d("UUID",uuid);
+        Log.d("GET", birthday);
+        Log.d("UUID", uuid);
 
-        setCharInfo(globals.themeId,uuid,bloodId,weaponId,birthday,partnerId);
+        setCharInfo(globals.themeId, uuid, bloodId, weaponId, birthday, partnerId);
 
         moveToFortune();
 
@@ -64,4 +64,12 @@ public class ResultActivity extends AppMenuActivity {
         });
     }
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+
+        RelativeLayout layout = (RelativeLayout) findViewById(R.id.activity_result);
+        changeBackGround(layout);
+
+    }
 }

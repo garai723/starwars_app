@@ -1,16 +1,19 @@
 package com.example.garai.starwars;
 
+import android.app.ActionBar;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -40,9 +43,13 @@ public class AppMenuActivity extends AppCompatActivity {
 
         globals = (Globals) this.getApplication();
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+
+
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.logo_menu);
+        getSupportActionBar().setIcon(R.drawable.menu_logo);
     }
 
 
@@ -69,21 +76,29 @@ public class AppMenuActivity extends AppCompatActivity {
             case R.id.menu_theme:
                 Intent intent = new Intent(getApplication(), ThemeActivity.class);
                 intent.putExtra("INTENT", getIntent());
-                startActivity(intent);
+
+                startActivityForResult(intent,0);
+
                 break;
             case R.id.menu_root:
-                    Intent rootIntent = new Intent(getApplication(), SettingActivity.class);
-                    startActivity(rootIntent);
-                    break;
+                Intent rootIntent = new Intent(getApplication(), SettingActivity.class);
+                startActivity(rootIntent);
+                break;
             case R.id.menu_version:
                 Intent versionIntent = new Intent(getApplication(), VesionActivity.class);
                 startActivity(versionIntent);
                 break;
+            case android.R.id.home:
+                // app icon in action bar clicked;
+               finish();
+            default:
         }
 
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
 
     protected void setCharInfo(String themeId, String... strings) {
@@ -114,8 +129,11 @@ public class AppMenuActivity extends AppCompatActivity {
                     final TextView textView = (TextView) findViewById(R.id.text_name);
                     final TextView textProfile = (TextView) findViewById(R.id.text_profile);
 
+                    textView.setTypeface(Typeface.createFromAsset(getAssets(),"Meiryo.ttf"));
                     textView.setText(charName);
-                    textProfile.setText(profile);
+                    String html = "【診断結果】<br>";
+                    CharSequence source = Html.fromHtml(html);
+                    textProfile.setText(source+profile);
                     imageView.setImageResource(res);
 
                     Log.d("SWAPI_NAME", String.valueOf(result));
@@ -160,23 +178,27 @@ public class AppMenuActivity extends AppCompatActivity {
 
 
     protected void getUserTheme(final RelativeLayout layout) {
+
         AsyncGetSWAPIResult swapi = new AsyncGetSWAPIResult(new AsyncGetSWAPIResult.AsyncTaskCallback() {
 
             public void postExecute(JSONObject result) {
 
                 try {
+
+                    Log.d("RESULT", String.valueOf(result));
+
                     String theme = (String) result.get("user_theme");
                     globals.themeId = theme;
 
                     changeBackGround(layout);
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
         });
 
-        swapi.execute("http://27.120.120.174/StarWars/Index.php?uuid=" + getId());
-
+        swapi.execute("http://27.120.120.174/StarWars/UserTheme.php?uuid=" + getId());
     }
 
 
@@ -185,8 +207,7 @@ public class AppMenuActivity extends AppCompatActivity {
 
             public void postExecute(JSONObject result) {
 
-                Intent intent = new Intent(getApplication(), SecondActivity.class);
-                startActivity(intent);
+
             }
         });
 
@@ -219,13 +240,13 @@ public class AppMenuActivity extends AppCompatActivity {
                 try {
                     Log.d("AAAAA", String.valueOf(result));
 
-                    String hour= (String) result.get("notification_hour");
-                    String minute= (String) result.get("notification_minute");
+                    String hour = (String) result.get("notification_hour");
+                    String minute = (String) result.get("notification_minute");
 
-                    Log.d("TIME",hour);
-                    Log.d("TIME",minute);
+                    Log.d("TIME", hour);
+                    Log.d("TIME", minute);
 
-                    setNotification(hour,minute);
+                    setNotification(hour, minute);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -234,7 +255,7 @@ public class AppMenuActivity extends AppCompatActivity {
             }
         });
 
-        swapi.execute("http://27.120.120.174/StarWars/Time.php?uuid=" + getId()+"&hour="+ints[0]+"&minute="+ints[1]);
+        swapi.execute("http://27.120.120.174/StarWars/Time.php?uuid=" + getId() + "&hour=" + ints[0] + "&minute=" + ints[1]);
 
 
     }
@@ -255,10 +276,9 @@ public class AppMenuActivity extends AppCompatActivity {
         // 初回実行時間設定（過去の時間設定の場合即実行）
         calendar.set(java.util.Calendar.YEAR, year);
         calendar.set(java.util.Calendar.MONTH, month);
-        calendar.set(java.util.Calendar.DATE, date+1);
+        calendar.set(java.util.Calendar.DATE, date + 1);
         calendar.set(java.util.Calendar.HOUR_OF_DAY, Integer.parseInt(strings[0]));
         calendar.set(java.util.Calendar.MINUTE, Integer.parseInt(strings[1]));
-
 
 
         //処理の実行感覚
