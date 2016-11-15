@@ -5,6 +5,5 @@ android:shape="rectangle">
 <stroke
     android:width="5dip"
     android:color="@color/basic_blue1"
-    android:dashGap="5dip"
-    android:dashWidth="5dip" />
+    />
 </shape>

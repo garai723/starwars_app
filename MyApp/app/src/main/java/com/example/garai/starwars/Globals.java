@@ -2,6 +2,7 @@ package com.example.garai.starwars;
 
 import android.app.Application;
 import android.content.Intent;
+import android.util.Log;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -25,7 +26,10 @@ public class Globals extends Application {
             public void postExecute(JSONObject result) {
 
                 try {
-                    themeId = (String) result.get("user_theme");
+                    Log.d("THEME", String.valueOf(result.get("user_theme")));
+
+                    themeId= (String) result.get("user_theme");
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -39,4 +43,7 @@ public class Globals extends Application {
 
         return 1;
     }
+
+
+
 }

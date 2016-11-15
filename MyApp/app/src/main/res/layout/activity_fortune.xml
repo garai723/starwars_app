@@ -20,19 +20,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical|center_horizontal|center"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textFortune"
-                android:layout_width="wrap_content"
+                android:text="今日のラッキーアイテム"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="20dp"
-                android:text="今日の運勢は"
-                android:textColor="@android:color/background_light"
-                android:textSize="30sp" />
+                android:id="@+id/text_item"
+                android:textColor="@color/radio_white_color"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_lucky"
+                android:textColor="@android:color/holo_orange_light"
+                android:textSize="18sp"
+                android:layout_marginBottom="10dp" />
 
             <TextView
                 android:id="@+id/text_fortune"
@@ -43,16 +47,22 @@
                 android:layout_marginBottom="20dp"
                 android:textColor="@android:color/background_light" />
 
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#ffffff" />
+
             <TextView
                 android:id="@+id/text_money"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:gravity="center_vertical|center_horizontal"
                 android:text="金運"
                 android:textColor="@android:color/background_light"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <RatingBar
                 android:id="@+id/rating_money"
@@ -61,20 +71,25 @@
                 android:background="@android:color/transparent"
                 style="@style/MyRating"
                 android:numStars="5"
-                android:stepSize="0.5"
+                android:stepSize="2"
                 android:rating="1"
                 android:indeterminateDrawable="@drawable/btn_star" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#ffffff" />
+
             <TextView
                 android:id="@+id/text_job"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:gravity="center_vertical|center_horizontal"
                 android:text="仕事運"
                 android:textColor="@android:color/background_light"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <RatingBar
                 android:id="@+id/rating_job"
@@ -83,17 +98,21 @@
                 android:background="@android:color/transparent"
                 style="@style/MyRating" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#ffffff" />
 
             <TextView
                 android:id="@+id/text_love"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:gravity="center_vertical|center_horizontal"
                 android:text="恋愛運"
                 android:textColor="@android:color/background_light"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <RatingBar
                 android:id="@+id/rating_love"
@@ -103,16 +122,21 @@
                 style="@style/MyRating" />
 
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#ffffff" />
+
             <TextView
                 android:id="@+id/text_total"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:gravity="center_vertical|center_horizontal"
                 android:text="総合運"
                 android:textColor="@android:color/background_light"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
 
             <RatingBar
@@ -121,6 +145,11 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 style="@style/MyRating" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#ffffff" />
 
         </LinearLayout>
     </ScrollView>
